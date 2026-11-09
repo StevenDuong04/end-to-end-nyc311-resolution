@@ -1,4 +1,4 @@
-# end-to-end-nyc11-resolution
+# end-to-end-nyc311-resolution
 Collected NYC 311 and weather data via APIs, analyzed resolution times, and built a model to predict slow requests
 
 # NYC 311: Predicting Slow Service Request Resolution
