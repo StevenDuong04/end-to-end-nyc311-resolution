@@ -224,3 +224,6 @@ data/raw/*
 !data/raw/.gitkeep
 *.db
 *.sqlite
+data/processed/*
+!data/processed/.gitkeep
+!data/processed/cleaning_log.csv

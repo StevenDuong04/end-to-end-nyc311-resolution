@@ -1,0 +1,9 @@
+step,rows_before,rows_after,rows_removed,reason
+Load raw 311 data,348180,348180,0,Starting point
+Drop duplicate unique_key,348180,348180,0,Same request pulled twice
+Drop missing/unparseable created_date,348180,348180,0,Cannot compute timing without a creation date
+"Standardize borough, complaint_type, agency",348180,348180,0,"Trim, uppercase, 'Unspecified' -> 'UNKNOWN' (no rows removed)"
+Remove closed_date earlier than created_date,348180,348081,99,Impossible timing (data entry error)
+Remove coordinates outside NYC,348081,348081,0,Points present but outside the NYC bounding box (rows with missing coordinates are kept)
+Flag open requests (no closed_date),348081,348081,0,"2,592 flagged as open, kept in file and labeled slow (open for 7+ days), excluded from resolution-time analysis"
+Merge daily weather on date,348081,348081,0,"Left join, row count must not change"
